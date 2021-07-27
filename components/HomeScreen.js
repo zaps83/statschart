@@ -8,6 +8,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Button
 } from 'react-native';
 
 import {
@@ -44,7 +45,7 @@ const Section = ({children, title}): Node => {
     );
   };
 
-const HomeScreen: () => Node = () => {
+const HomeScreen: () => Node = ({ navigation }) => {
     const isDarkMode = useColorScheme() === 'dark';
   
     const backgroundStyle = {
@@ -53,6 +54,12 @@ const HomeScreen: () => Node = () => {
   
     return (
 <SafeAreaView style={backgroundStyle}>
+<Button
+            title="Go to stats"
+            onPress={() =>
+                navigation.navigate('Stats', { name: 'Stats' })
+            }
+            />
 <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
 <ScrollView
   contentInsetAdjustmentBehavior="automatic"
@@ -100,6 +107,7 @@ const HomeScreen: () => Node = () => {
     highlight: {
       fontWeight: '700',
     },
+    
   });
   
   export default HomeScreen;

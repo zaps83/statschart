@@ -15,9 +15,15 @@ const TestScreen = ({ navigation }) => {
         <>
         <Text>test text</Text>
         <Button
-            title="Go to Jane's profile"
+            title="Go home"
             onPress={() =>
                 navigation.navigate('Home', { name: 'Home' })
+            }
+            />
+        <Button
+            title="Go to stats"
+            onPress={() =>
+                navigation.navigate('Stats', { name: 'Stats' })
             }
             />
         </>

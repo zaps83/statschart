@@ -13,6 +13,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import type {Node} from 'react';
 import HomeScreen from './components/HomeScreen'
 import TestScreen from './components/TestScreen'
+import StatsScreen from './components/StatsScreen'
 
 const Stack = createStackNavigator();
 
@@ -26,10 +27,16 @@ const App: () => Node = () => {
           component={TestScreen}
           options={{ title: 'Test' }}
         />
+      <Stack.Screen
+          name="Stats"
+          component={StatsScreen}
+          options={{ title: 'Stats' }}
+        />
+
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Welcome' }}
+          options={{ title: 'Home' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
